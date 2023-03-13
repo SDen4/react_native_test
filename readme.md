@@ -1,1 +1,1 @@
-npx react-native run-android
+# Test React-Native App Without Expo
