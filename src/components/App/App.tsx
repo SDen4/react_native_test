@@ -3,7 +3,6 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
   Text,
   useColorScheme,
   View,
@@ -17,7 +16,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {Section} from './src/components/Section';
+import {Section} from '../Section/Section';
+
+import {styles} from './styles';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -59,11 +60,5 @@ function App(): JSX.Element {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
