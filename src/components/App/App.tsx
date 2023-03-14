@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  Alert,
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -27,6 +29,21 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const multiButtonAlert = () =>
+    Alert.alert('Alert Title', 'Alert Message here', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => console.log('OK Pressed'), style: 'default'},
+      {
+        text: '33',
+        onPress: () => console.log('33 Pressed'),
+        style: 'destructive',
+      },
+    ]);
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -37,6 +54,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -54,6 +72,9 @@ function App(): JSX.Element {
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
+
+          <Button title={'Buttons Alert'} onPress={multiButtonAlert} />
+
           <LearnMoreLinks />
         </View>
       </ScrollView>
